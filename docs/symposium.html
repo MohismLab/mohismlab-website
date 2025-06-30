@@ -220,8 +220,9 @@
         .org-logo {
             display: block;
             margin: 30px auto 0 auto;
-            max-width: 180px;
+            max-width: 500px;
             height: auto;
+            background-color: white;
         }
 
         .footer {
@@ -234,6 +235,110 @@
 
         .footer a {
             color: #667eea;
+        }
+
+        /* Dark mode styles */
+        .dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .dark-mode .navbar {
+            background: #1f1f1f;
+            color: #e0e0e0;
+        }
+
+        .dark-mode .nav-link {
+            color: #e0e0e0 !important;
+        }
+
+        .dark-mode .nav-link:hover {
+            color: #667eea !important;
+        }
+
+
+
+        .dark-mode .section-title {
+            color: #667eea;
+        }
+
+        .dark-mode .info-section {
+            background: #1e1e1e;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px #0003;
+        }
+
+        .dark-mode .speaker-card {
+            background: #2c2c2c;
+            border-radius: 10px;
+            box-shadow: 0 1px 6px #0003;
+        }
+
+        .dark-mode .speaker-card h5 {
+            color: #e0e0e0;
+        }
+
+        .dark-mode .speaker-card p,
+        .dark-mode .talk-title,
+        .dark-mode .abstract,
+        .dark-mode .bio {
+            color: #ccc;
+        }
+
+        .dark-mode .team-member {
+            background: #2c2c2c;
+            border-radius: 10px;
+            box-shadow: 0px 3px 15px rgba(255, 255, 255, 0.1);
+        }
+
+        .dark-mode .footer {
+            background: #1f1f1f;
+            color: #e0e0e0;
+        }
+
+        .dark-mode .footer a {
+            color: #667eea;
+        }
+
+        /* 在 .dark-mode 下将所有黑色字体变为白色，将图片背景色变为白色 */
+        .dark-mode,
+
+        .dark-mode .symposium-meta,
+        .dark-mode .speaker-card h5,
+        .dark-mode .speaker-card p,
+        .dark-mode .talk-title,
+        .dark-mode .abstract,
+        .dark-mode .bio,
+        .dark-mode .team-member p,
+        .dark-mode .navbar-brand,
+        .dark-mode .nav-link,
+        .dark-mode .footer {
+            color: #fff !important;
+        }
+
+        .dark-mode.org-logo,
+        .dark-mode .speaker-card img,
+        .dark-mode .team-member img {
+            background: #fff !important;
+        }
+
+        #light-toggle .fa-moon {
+            display: none;
+            color: #333;
+        }
+
+        #light-toggle .fa-sun {
+            display: block;
+            color: #333;
+        }
+
+        body.dark-mode #light-toggle .fa-moon {
+            display: block;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode #light-toggle .fa-sun {
+            display: none;
         }
     </style>
 </head>
@@ -272,10 +377,14 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/#teaching">Teaching</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/#join">Join</a>
-                        </li>
+
                     </ul>
+                    <div class="toggle-container">
+                        <a id="light-toggle">
+                            <i class="fas fa-moon"></i>
+                            <i class="fas fa-sun"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -448,17 +557,48 @@
 
             <!-- Shanghang Zhang -->
             <div class="speaker-card">
-                <img src="assets/zhang.png" alt="Prof Shanghang Zhang">
+                <img src="assets/zhang.jpg" alt="Prof Shanghang Zhang">
                 <div class="speaker-info">
                     <h5><b>Shanghang Zhang</b></h5>
                     <p>Professor, Peking University</p>
-                    <div class="talk-title">Talk Title: TBA</div>
+                    <div class="talk-title">Talk Title: Open-World Embodied Multimodal Large Model</div>
                     <div class="talk-title">Abstract:</div>
-                    <div class="abstract">Long-term research in artificial intelligence and robotics. Details to be
-                        announced.</div>
+                    <div class="abstract">In recent years, significant progress has been made in research on large
+                        models and embodied intelligence. However,
+                        embodied agents in the real world often face generalization challenges across ontologies,
+                        scenarios, and tasks in open
+                        environments. This talk will present a series of research efforts on embodied multimodal
+                        foundation models, with a focus
+                        on key advancements such as the Embodied AI Brain Model and end-to-end large models.
+                        Additionally, the construction of
+                        large-scale datasets for embodied intelligence will be introduced.</div>
                     <div class="bio">
-                        <b>Shanghang Zhang</b>, Professor at Peking University, long-term research in AI
-                        and robotics.
+                        <b>Shanghang Zhang</b> is a Researcher, Doctoral Advisor, and Boya Young Scholar at Peking
+                        University's School of Computer
+                        Science, as well as a Scholar at the Beijing Academy of Artificial Intelligence (BAAI). Her
+                        research focuses on theories
+                        and systems for generalized machine learning in open environments. She has published over 120
+                        papers in top-tier AI
+                        journals and conferences, with her work cited 17,000 times on Google Scholar. She received the
+                        AAAI 2021 Best Paper
+                        Award and authored the Springer Nature book Deep Reinforcement Learning, which has garnered
+                        nearly 300,000 global
+                        downloads and was selected as a China Author Annual High-Impact Research Highlight.
+
+                        <br>Shanghang Zhang honors include being named an EECS Rising Star (US), a Global AI Young
+                        Female
+                        Scholar, a member of the
+                        China Association for Science and Technology Youth 100, and an AI 100 Young Pioneer. She won
+                        first place in the
+                        International Human Brain Multimodal Computational Model Response Prediction Competitionand
+                        the ICCV Continual Learning
+                        Competition. She has organized workshops at NeurIPS and ICML and served as a Senior Program
+                        Committee member for AAAI
+                        2022–2024.<br>Shanghang Zhang earned her Ph.D. from Carnegie Mellon University in 2018 and
+                        conducted
+                        postdoctoral research at the
+                        University of California, Berkeley.
+
                     </div>
                 </div>
             </div>
@@ -473,13 +613,14 @@
                 <img src="assets/Qingbiaoli1.jpg" alt="Prof Qingbiao Li">
                 <p><b>Qingbiao Li</b><br>University of Macau</p>
             </div>
-            <div class="team-member">
-                <img src="assets/luowanying1.jpg" alt="Wanying LUO">
-                <p><b>Wanying LUO</b><br>University of Macau</p>
-            </div>
+
             <div class="team-member">
                 <img src="assets/yan.jpg" alt="Hecun Yan">
                 <p><b>Hecun Yan</b></p>
+            </div>
+            <div class="team-member">
+                <img src="assets/luowanying1.jpg" alt="Wanying LUO">
+                <p><b>Wanying LUO</b><br>University of Macau</p>
             </div>
         </div>
         <img src="assets/UMFSTlogo.png" alt="UMFST Logo" class="org-logo">
@@ -495,3 +636,36 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js"></script>
+    <script>
+        // Dark mode functionality
+        function toggleDarkMode() {
+            const body = document.body;
+            const isDarkMode = body.classList.contains('dark-mode');
+            if (isDarkMode) {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                document.body.classList.add('dark-mode');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            initTheme();
+            const darkModeToggle = document.getElementById('light-toggle');
+            if (darkModeToggle) {
+                darkModeToggle.addEventListener('click', toggleDarkMode);
+            }
+        });
+    </script>
+</body>
+
+</html>
